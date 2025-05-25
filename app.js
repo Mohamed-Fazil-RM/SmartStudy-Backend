@@ -22,12 +22,11 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-.then(() => console.log("MongoDB Connected"))
-.catch((err) => console.error("Mongo Error:", err));
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.error("Mongo Error:", err));
 
 // Models
 const User = require("./models/User");
-const Task = require("./models/Task");
 const SearchLog = require("./models/SearchLog");
 const Usage = require("./models/Usage");
 
