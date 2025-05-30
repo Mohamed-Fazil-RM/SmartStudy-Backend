@@ -1,14 +1,11 @@
 // models/User.js
-const mongoose = require("mongoose");
+const { Schema } = require("mongoose");
+const mongoose = require("../config/Mongodb_config");
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = new Schema({
   email: { type: String, required: true, unique: true },
-  password: { type: String }, // hashed if local login
-  googleId: { type: String }, // for Google login
-  name: { type: String },
-  photo: { type: String },
-  lastLogin: { type: Date },
-  loginHistory: [{ timestamp: Date }]
+  password: { type: String }, // hashed if local login 
+  Userdata:{type:Object}
 });
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("EmailUser", UserSchema);
